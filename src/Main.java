@@ -31,7 +31,7 @@ public class Main {
         ArrayList<Coord> robotPosition = new ArrayList<Coord>();
         for (char c : robotWay.toCharArray()){
 
-            robotPosition.addLast(x0, y0, c);
+            robotPosition.addLast(new Coord(i){x0, y0, c});
 
             if (c=='S') {moveCount++;}
 i++;
