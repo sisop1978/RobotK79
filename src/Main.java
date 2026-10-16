@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 //TIP Чтобы <b>запустить</b> код, нажмите <shortcut actionId="Run"/> или
@@ -30,11 +31,16 @@ public class Main {
         int i=0;
         ArrayList<Coord> robotPosition = new ArrayList<Coord>();
         for (char c : robotWay.toCharArray()){
-
-            robotPosition.addLast(new Coord(i){x0, y0, c});
+        Coord coordx = new Coord(x0, y0, c);
+        //coordx.d=robotPosition.add(coordx); //надо проверять
+            coordx=coordx.newPosition(coordx, c);
+            //надо проверять
 
             if (c=='S') {moveCount++;}
+
 i++;
+            System.out.println("Текущая координата x, y, d " + coordx.x+ " " + coordx.y +" "+ coordx.d);
+
         }
 
     }

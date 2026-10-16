@@ -5,13 +5,10 @@ public class Coord {
     int x;
     int y;
     char d;
-    public Coord() {
-        //int x=this.x;//координата х
-        //int y=this.y;//координата н
-        //char d;//текущее направление х
-        //char move;
+    public Coord(int x0, int y0, char c) {
     }
-        public char changeDirection ( char d, char move){
+
+    public char changeDirection ( char d, char move){
                /* указатели направления:
                N (север, вверх  y+1)
                S (юг, вниз   y-1)
@@ -44,7 +41,8 @@ public class Coord {
         }
 
         public Coord newPosition (Coord oldPosition, char move){
-            int x1 = 0, y1 = 0; //координаты
+        Coord coordxy; //внутренняя переменная
+        int x1 = 0, y1 = 0; //координаты
             if (changeDirection(move, oldPosition.d) == 'W') {
                 x1 = oldPosition.x - 1;
             }
@@ -57,9 +55,8 @@ public class Coord {
             if (changeDirection(move, oldPosition.d) == 'S') {
                 y1 = oldPosition.y - 1;
             }
-            //oldPosition.add(x, y, d);
-
-            //return {0, 0,'S'}; //заглушка
+            coordxy = new Coord(x, y, move);
+            return coordxy;
 
         }
 
